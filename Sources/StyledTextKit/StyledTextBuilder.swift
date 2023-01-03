@@ -74,7 +74,7 @@ public final class StyledTextBuilder: Hashable, Equatable {
         text: String,
         traits: UIFontDescriptor.SymbolicTraits? = nil,
         attributes: NSAttributedStringAttributesType? = nil
-        ) -> StyledTextBuilder {
+    ) -> StyledTextBuilder {
         return add(storage: .text(text), traits: traits, attributes: attributes)
     }
 
@@ -83,7 +83,7 @@ public final class StyledTextBuilder: Hashable, Equatable {
         attributedText: NSAttributedString,
         traits: UIFontDescriptor.SymbolicTraits? = nil,
         attributes: NSAttributedStringAttributesType? = nil
-        ) -> StyledTextBuilder {
+    ) -> StyledTextBuilder {
         return add(storage: .attributedText(attributedText), traits: traits, attributes: attributes)
     }
 
@@ -92,7 +92,7 @@ public final class StyledTextBuilder: Hashable, Equatable {
         storage: StyledText.Storage = .text(""),
         traits: UIFontDescriptor.SymbolicTraits? = nil,
         attributes: NSAttributedStringAttributesType? = nil
-        ) -> StyledTextBuilder {
+    ) -> StyledTextBuilder {
         guard let tip = styledTexts.last else { return self }
 
         var nextAttributes = tip.style.attributes
@@ -136,7 +136,7 @@ public final class StyledTextBuilder: Hashable, Equatable {
         image: UIImage,
         options: [StyledText.ImageFitOptions] = [.fit, .center],
         attributes: NSAttributedStringAttributesType? = nil
-        ) -> StyledTextBuilder {
+    ) -> StyledTextBuilder {
         return add(storage: .image(image, options), attributes: attributes)
     }
 
